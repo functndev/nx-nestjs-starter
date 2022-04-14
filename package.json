@@ -9,16 +9,16 @@
   },
   "private": true,
   "dependencies": {
-    "@nestjs/common": "^8.0.0",
-    "@nestjs/core": "^8.0.0",
-    "@nestjs/platform-express": "^8.0.0",
+    "@nestjs/common": "^8.4.4",
+    "@nestjs/core": "^8.4.4",
+    "@nestjs/platform-express": "^8.4.4",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^7.0.0",
-    "tslib": "^2.0.0"
+    "rxjs": "^7.5.5",
+    "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@nestjs/schematics": "^8.0.0",
-    "@nestjs/testing": "^8.0.0",
+    "@nestjs/schematics": "^8.0.10",
+    "@nestjs/testing": "^8.4.4",
     "@nrwl/cli": "13.10.2",
     "@nrwl/eslint-plugin-nx": "13.10.2",
     "@nrwl/jest": "13.10.2",
@@ -26,16 +26,16 @@
     "@nrwl/nest": "13.10.2",
     "@nrwl/node": "13.10.2",
     "@nrwl/workspace": "13.10.2",
-    "@types/jest": "27.0.2",
+    "@types/jest": "27.4.1",
     "@types/node": "16.11.7",
-    "@typescript-eslint/eslint-plugin": "~5.18.0",
-    "@typescript-eslint/parser": "~5.18.0",
-    "eslint": "~8.12.0",
-    "eslint-config-prettier": "8.1.0",
-    "jest": "27.2.3",
+    "@typescript-eslint/eslint-plugin": "~5.19.0",
+    "@typescript-eslint/parser": "~5.19.0",
+    "eslint": "~8.13.0",
+    "eslint-config-prettier": "8.5.0",
+    "jest": "27.5.1",
     "nx": "13.10.2",
-    "prettier": "^2.5.1",
-    "ts-jest": "27.0.5",
-    "typescript": "~4.6.2"
+    "prettier": "^2.6.2",
+    "ts-jest": "27.1.4",
+    "typescript": "~4.6.3"
   }
 }
