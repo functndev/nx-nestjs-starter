@@ -6,6 +6,8 @@
 		"start": "nx serve",
 		"build": "nx build",
 		"test": "nx test",
+		"format:check": "nx format:check",
+		"format:write": "nx format:write",
 		"affected:lint": "nx affected:lint --maxWarnings 0 --parallel"
 	},
 	"private": true,

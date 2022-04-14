@@ -15,7 +15,7 @@ COPY . .
 
 RUN npx prisma generate
 
-RUN npx nx build backend --prod
+RUN npx nx build api --prod
 
 RUN npm prune --production
 
