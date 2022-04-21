@@ -27,31 +27,25 @@ nestjs-starter
     │   │   ├── filters               (dir)
     │   │   └── decorators            (dir)
     │   └── modules
-    │       ├── base-module-1         (lib)
-    │       ├── base-module-2         (lib)
-    │       └── base-module-3         (lib)
-    ├── api-app-name
+    │       ├── feature-1		          (lib)
+    │       ├── feature-2		          (lib)
+    │       └── feature-3		          (lib)
+    ├── api-shared
     │   ├── types                     (lib)
     │   ├── util                      (lib)
     │   └── modules                   (dir)
     │       ├── core-module           (lib)
-    │       ├── feature-1             (lib)
-    │       ├── feature-2             (lib)
-    │       └── feature-3             (lib)
-    ├── frontend-core
+    │       ├── base-module-1         (lib)
+    │       ├── base-module-2         (lib)
+    │       └── base-module-3         (lib)
+    ├── frontend
     │   ├── util                      (lib)
     │   ├── types                     (lib)
-    │   └── components                (dir)
-    │       ├── shared-component-1    (lib)
-    │       ├── shared-component-2    (lib)
-    │       └── shared-component-3    (lib)
-    ├── frontend-app-name
+    │   └── components                (lib)
+    ├── frontend-shared
     │   ├── util                      (lib)
     │   ├── types                     (lib)
-    │   └── components                (dir)
-    │       ├── specific-component-1  (lib)
-    │       ├── specific-component-2  (lib)
-    │       └── specific-component-3  (lib)
+    │   └── components                (lib)
     └── shared
         ├── util                      (lib)
         └── types                     (lib)
