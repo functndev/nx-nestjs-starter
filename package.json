@@ -45,5 +45,9 @@
 	},
 	"lint-staged": {
 		"*.{ts,tsx,js,css,md,json}": "nx format:write --uncommitted"
+	},
+	"engines": {
+		"node": ">=16.0.0",
+		"npm": ">=8.0.0"
 	}
 }
