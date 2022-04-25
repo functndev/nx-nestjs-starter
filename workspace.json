@@ -1,6 +1,10 @@
 {
 	"version": 2,
 	"projects": {
-		"api": "apps/api"
+		"api": "apps/api",
+		"api-modules-core": "libs/api/modules/core",
+		"api-shared-modules-global": "libs/api-shared/modules/global",
+		"api-shared-modules-health": "libs/api-shared/modules/health",
+		"api-shared-types": "libs/api-shared/types"
 	}
 }

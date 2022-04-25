@@ -13,6 +13,7 @@
 
 This project aims to build a base general nx starter scaffolding for apps that use NestJS as API and maybe expand to some more apps in the future.
 The app folder should only contain shell applications that are basically entry points into some core application libraries.
+There should be a core module in every app lib that imports every necessary module and is the entrypoint for the app to require.
 
 ```
 nestjs-starter

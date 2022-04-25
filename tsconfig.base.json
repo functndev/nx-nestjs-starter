@@ -14,7 +14,18 @@
 		"skipLibCheck": true,
 		"skipDefaultLibCheck": true,
 		"baseUrl": ".",
-		"paths": {}
+		"paths": {
+			"@nestjs-starter/api-shared/modules/global": [
+				"libs/api-shared/modules/global/src/index.ts"
+			],
+			"@nestjs-starter/api-shared/modules/health": [
+				"libs/api-shared/modules/health/src/index.ts"
+			],
+			"@nestjs-starter/api-shared/types": [
+				"libs/api-shared/types/src/index.ts"
+			],
+			"@nestjs-starter/api/modules/core": ["libs/api/modules/core/src/index.ts"]
+		}
 	},
 	"exclude": ["node_modules", "tmp"]
 }
