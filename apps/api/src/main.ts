@@ -7,9 +7,10 @@ import { performance } from 'perf_hooks';
 import {
 	ConfigService,
 	PrismaService,
-	getValidationPipe,
 	i18nMiddleware,
+	getValidationPipe,
 	initI18n,
+	initExpressSession,
 } from '@nestjs-starter/api/modules/core';
 
 import { AppModule } from './app/app.module';
@@ -34,6 +35,7 @@ async function bootstrap() {
 	app.use(cookieParser());
 	app.useGlobalPipes(getValidationPipe(config));
 	app.use(i18nMiddleware);
+	app.use(initExpressSession(config, prisma));
 
 	await app.listen(config.port);
 

@@ -4,7 +4,7 @@ import { LoggerModule } from 'nestjs-pino';
 import { HealthModule } from '@nestjs-starter/api/modules/health';
 import { GlobalModule } from '@nestjs-starter/api/modules/global';
 
-import { pinoLoggerConfigOptions } from './util/logger-init';
+import { pinoLoggerConfigOptions } from './util/init-logger';
 
 @Module({
 	imports: [

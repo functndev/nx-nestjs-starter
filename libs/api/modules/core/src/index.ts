@@ -1,5 +1,6 @@
 export * from './util/init-validation';
 export * from './util/init-i18n';
+export * from './util/init-express-session';
 
 export * from './core.module';
 
