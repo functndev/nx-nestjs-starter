@@ -30,7 +30,7 @@
 							},
 							{
 								"sourceTag": "scope:backend-app",
-								"onlyDependOnLibsWithTags": ["scope:backend-core"],
+								"onlyDependOnLibsWithTags": ["scope:backend-core", "scope:backend", "scope:shared"],
 								"notDependOnLibsWithTags": ["scope:frontend"],
 								"bannedExternalImports": ["*react*"]
 							}
