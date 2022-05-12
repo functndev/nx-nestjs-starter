@@ -1,14 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { InjectPinoLogger, PinoLogger } from 'nestjs-pino';
 
-import { ConfigService } from '@nestjs-starter/api-shared/modules/global';
+import { ConfigService } from '@nestjs-starter/api/modules/global';
 
 @Injectable()
 export class HealthService {
 	constructor(
 		private readonly configService: ConfigService,
 		@InjectPinoLogger(HealthService.name)
-		private readonly pinoLogger: PinoLogger
+		private readonly pinoLogger: PinoLogger,
 	) {}
 
 	public getHealth(): string {

@@ -1,5 +1,5 @@
 module.exports = {
-	displayName: 'api-shared-modules-global',
+	displayName: 'api-modules-health',
 	preset: '../../../../jest.preset.ts',
 	globals: {
 		'ts-jest': {
@@ -11,5 +11,5 @@ module.exports = {
 		'^.+\\.[tj]s$': 'ts-jest',
 	},
 	moduleFileExtensions: ['ts', 'js', 'html'],
-	coverageDirectory: '../../../../coverage/libs/api-shared/modules/global',
+	coverageDirectory: '../../../../coverage/libs/api/modules/health',
 };

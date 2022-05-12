@@ -15,16 +15,10 @@
 		"skipDefaultLibCheck": true,
 		"baseUrl": ".",
 		"paths": {
-			"@nestjs-starter/api-shared/modules/global": [
-				"libs/api-shared/modules/global/src/index.ts"
-			],
-			"@nestjs-starter/api-shared/modules/health": [
-				"libs/api-shared/modules/health/src/index.ts"
-			],
-			"@nestjs-starter/api-shared/types": [
-				"libs/api-shared/types/src/index.ts"
-			],
-			"@nestjs-starter/api/modules/core": ["libs/api/modules/core/src/index.ts"]
+			"@nestjs-starter/api/modules/core": ["libs/api/modules/core/src/index.ts"],
+			"@nestjs-starter/api/modules/global": ["libs/api/modules/global/src/index.ts"],
+			"@nestjs-starter/api/modules/health": ["libs/api/modules/health/src/index.ts"],
+			"@nestjs-starter/api/types": ["libs/api/types/src/index.ts"]
 		}
 	},
 	"exclude": ["node_modules", "tmp"]

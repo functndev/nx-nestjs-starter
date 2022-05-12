@@ -1,6 +1,6 @@
 import { v4 } from 'uuid';
 
-import { ConfigService } from '../services/config.service';
+import { ConfigService } from '@nestjs-starter/api/modules/global';
 
 import type { LoggerModuleAsyncParams } from 'nestjs-pino';
 

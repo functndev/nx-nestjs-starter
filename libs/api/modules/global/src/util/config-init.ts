@@ -1,7 +1,7 @@
 import Joi from 'joi';
 
 import type { ConfigModuleOptions } from '@nestjs/config';
-import type { EnvironmentType } from '@nestjs-starter/api-shared/types';
+import type { EnvironmentType } from '@nestjs-starter/api/types';
 
 export const configModuleConfig: ConfigModuleOptions = {
 	isGlobal: true,

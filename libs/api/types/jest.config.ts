@@ -1,6 +1,6 @@
 module.exports = {
-	displayName: 'api-shared-modules-health',
-	preset: '../../../../jest.preset.ts',
+	displayName: 'api-types',
+	preset: '../../../jest.preset.ts',
 	globals: {
 		'ts-jest': {
 			tsconfig: '<rootDir>/tsconfig.spec.json',
@@ -11,5 +11,5 @@ module.exports = {
 		'^.+\\.[tj]s$': 'ts-jest',
 	},
 	moduleFileExtensions: ['ts', 'js', 'html'],
-	coverageDirectory: '../../../../coverage/libs/api-shared/modules/health',
+	coverageDirectory: '../../../coverage/libs/api/types',
 };

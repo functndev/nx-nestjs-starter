@@ -28,17 +28,9 @@ nestjs-starter
     │   │   ├── filters               (dir)
     │   │   └── decorators            (dir)
     │   └── modules
-    │       ├── feature-1		          (lib)
-    │       ├── feature-2		          (lib)
-    │       └── feature-3		          (lib)
-    ├── api-shared
-    │   ├── types                     (lib)
-    │   ├── util                      (lib)
-    │   └── modules                   (dir)
-    │       ├── core-module           (lib)
-    │       ├── base-module-1         (lib)
-    │       ├── base-module-2         (lib)
-    │       └── base-module-3         (lib)
+    │       ├── feature-1             (lib)
+    │       ├── feature-2             (lib)
+    │       └── feature-3             (lib)
     ├── frontend
     │   ├── util                      (lib)
     │   ├── types                     (lib)

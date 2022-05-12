@@ -1,0 +1,22 @@
+{
+	"root": "libs/api/modules/health",
+	"sourceRoot": "libs/api/modules/health/src",
+	"targets": {
+		"lint": {
+			"executor": "@nrwl/linter:eslint",
+			"outputs": ["{options.outputFile}"],
+			"options": {
+				"lintFilePatterns": ["libs/api/modules/health/**/*.ts"]
+			}
+		},
+		"test": {
+			"executor": "@nrwl/jest:jest",
+			"outputs": ["coverage/libs/api/modules/health"],
+			"options": {
+				"jestConfig": "libs/api/modules/health/jest.config.ts",
+				"passWithNoTests": true
+			}
+		}
+	},
+	"tags": []
+}

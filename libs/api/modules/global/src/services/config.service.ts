@@ -2,11 +2,11 @@ import { Injectable } from '@nestjs/common';
 import { ConfigService as NestConfigService } from '@nestjs/config';
 import { PrismaSessionStore } from '@quixo3/prisma-session-store';
 
-import { PrismaService } from '@nestjs-starter/api-shared/modules/global';
+import { PrismaService } from './prisma.service';
 
 import type { Path, PathValue } from '@nestjs/config';
 import type { SessionOptions } from 'express-session';
-import type { EnvironmentType } from '@nestjs-starter/api-shared/types';
+import type { EnvironmentType } from '@nestjs-starter/api/types';
 
 @Injectable()
 export class ConfigService {
