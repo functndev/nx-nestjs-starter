@@ -7,9 +7,7 @@ export const configModuleConfig: ConfigModuleOptions = {
 	isGlobal: true,
 	cache: true,
 	validationSchema: Joi.object<EnvironmentType, true>({
-		NODE_ENV: Joi.string()
-			.valid('development', 'production')
-			.default('development'),
+		NODE_ENV: Joi.string().valid('development', 'production').default('development'),
 		PORT: Joi.number().default(8080),
 
 		SECRET: Joi.string().required(),
