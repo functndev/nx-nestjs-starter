@@ -15,6 +15,7 @@
 		"skipDefaultLibCheck": true,
 		"baseUrl": ".",
 		"paths": {
+			"@nestjs-starter/api/core-lib": ["libs/api/core-lib/src/index.ts"],
 			"@nestjs-starter/api/modules/core": ["libs/api/modules/core/src/index.ts"],
 			"@nestjs-starter/api/modules/global": ["libs/api/modules/global/src/index.ts"],
 			"@nestjs-starter/api/modules/health": ["libs/api/modules/health/src/index.ts"],

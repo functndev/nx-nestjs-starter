@@ -2,7 +2,8 @@
 	"extends": "../../tsconfig.base.json",
 	"compilerOptions": {
 		"esModuleInterop": true,
-		"resolveJsonModule": true
+		"resolveJsonModule": true,
+		"target": "ES2021"
 	},
 	"files": [],
 	"include": [],

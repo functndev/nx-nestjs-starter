@@ -4,8 +4,9 @@ import { default as helmet } from 'helmet';
 import { default as cookieParser } from 'cookie-parser';
 import { performance } from 'perf_hooks';
 
-import { ConfigService, PrismaService } from '@nestjs-starter/api/modules/global';
 import {
+	ConfigService,
+	PrismaService,
 	getValidationPipe,
 	i18nMiddleware,
 	initI18n,
