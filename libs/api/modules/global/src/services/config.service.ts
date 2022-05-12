@@ -33,6 +33,10 @@ export class ConfigService {
 		return this.getInferred('SECRET');
 	}
 
+	get sessionSecret() {
+		return this.getInferred('SESSION_SECRET');
+	}
+
 	get expressSessionConfig(): SessionOptions {
 		return {
 			secret: this.getInferred('SESSION_SECRET'),

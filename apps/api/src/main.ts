@@ -1,12 +1,23 @@
 import { NestFactory } from '@nestjs/core';
 import { Logger } from 'nestjs-pino';
-
-import { ConfigService, PrismaService } from '@nestjs-starter/api/modules/global';
-
-import { AppModule } from './app/app.module';
+import { default as helmet } from 'helmet';
+import { default as cookieParser } from 'cookie-parser';
 import { performance } from 'perf_hooks';
 
+import { ConfigService, PrismaService } from '@nestjs-starter/api/modules/global';
+import {
+	getValidationPipe,
+	i18nMiddleware,
+	initI18n,
+} from '@nestjs-starter/api/modules/core';
+
+import { AppModule } from './app/app.module';
+
+import en from './assets/en.json';
+
 const now = performance.now();
+
+initI18n({ en });
 
 async function bootstrap() {
 	const app = await NestFactory.create(AppModule, { bufferLogs: true });
@@ -18,6 +29,10 @@ async function bootstrap() {
 	prisma.enableShutdownHooks(app);
 
 	app.useLogger(logger);
+	app.use(helmet());
+	app.use(cookieParser());
+	app.useGlobalPipes(getValidationPipe(config));
+	app.use(i18nMiddleware);
 
 	await app.listen(config.port);
 
