@@ -8,7 +8,8 @@
 		"test": "nx test",
 		"format:check": "nx format:check",
 		"format:write": "nx format:write",
-		"affected:lint": "nx affected:lint --maxWarnings 0 --parallel"
+		"affected:lint": "nx affected:lint --maxWarnings 0 --parallel",
+		"prepare": "husky install"
 	},
 	"private": true,
 	"dependencies": {
