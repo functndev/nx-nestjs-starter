@@ -1,19 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService as NestConfigService } from '@nestjs/config';
-import { PrismaSessionStore } from '@quixo3/prisma-session-store';
-
-import { PrismaService } from './prisma.service';
 
 import type { Path, PathValue } from '@nestjs/config';
-import type { SessionOptions } from 'express-session';
 import type { EnvironmentType } from '@nestjs-starter/api/types';
 
 @Injectable()
 export class ConfigService {
-	constructor(
-		private readonly config: NestConfigService<EnvironmentType, true>,
-		private readonly prisma: PrismaService,
-	) {}
+	constructor(private readonly config: NestConfigService<EnvironmentType, true>) {}
 
 	private getInferred<P extends Path<EnvironmentType>, R = PathValue<EnvironmentType, P>>(
 		path: P,
@@ -35,19 +28,6 @@ export class ConfigService {
 
 	get sessionSecret() {
 		return this.getInferred('SESSION_SECRET');
-	}
-
-	get expressSessionConfig(): SessionOptions {
-		return {
-			secret: this.getInferred('SESSION_SECRET'),
-			resave: false,
-			saveUninitialized: true,
-			store: new PrismaSessionStore(this.prisma, {
-				checkPeriod: 2 * 60 * 1000,
-				dbRecordIdIsSessionId: true,
-				dbRecordIdFunction: undefined,
-			}),
-		};
 	}
 
 	get isDevEnv() {

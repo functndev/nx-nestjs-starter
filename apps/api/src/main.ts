@@ -41,7 +41,7 @@ async function bootstrap() {
 
 	logger.log(`App running in [${config.nodeEnv}] mode`);
 	logger.log(`Listening at: ${await app.getUrl()}`);
-	logger.log(`App took ${Math.round(performance.now() - now)}ms to start.`);
+	logger.debug(`App took ${Math.round(performance.now() - now)}ms to start.`);
 }
 
 bootstrap();
