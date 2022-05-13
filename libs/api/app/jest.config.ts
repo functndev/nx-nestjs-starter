@@ -1,5 +1,5 @@
 module.exports = {
-	displayName: 'api-core-lib',
+	displayName: 'api-app',
 	preset: '../../../jest.preset.ts',
 	globals: {
 		'ts-jest': {
@@ -11,5 +11,5 @@ module.exports = {
 		'^.+\\.[tj]s$': 'ts-jest',
 	},
 	moduleFileExtensions: ['ts', 'js', 'html'],
-	coverageDirectory: '../../../coverage/libs/api/core-lib',
+	coverageDirectory: '../../../coverage/libs/api/app',
 };

@@ -2,7 +2,7 @@
 	"version": 2,
 	"projects": {
 		"api": "apps/api",
-		"api-core-lib": "libs/api/core-lib",
+		"api-app": "libs/api/app",
 		"api-modules-core": "libs/api/modules/core",
 		"api-modules-global": "libs/api/modules/global",
 		"api-modules-health": "libs/api/modules/health",
