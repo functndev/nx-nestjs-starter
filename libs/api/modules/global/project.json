@@ -1,0 +1,22 @@
+{
+	"root": "libs/api/modules/global",
+	"sourceRoot": "libs/api/modules/global/src",
+	"targets": {
+		"lint": {
+			"executor": "@nrwl/linter:eslint",
+			"outputs": ["{options.outputFile}"],
+			"options": {
+				"lintFilePatterns": ["libs/api/modules/global/**/*.ts"]
+			}
+		},
+		"test": {
+			"executor": "@nrwl/jest:jest",
+			"outputs": ["coverage/libs/api/modules/global"],
+			"options": {
+				"jestConfig": "libs/api/modules/global/jest.config.ts",
+				"passWithNoTests": true
+			}
+		}
+	},
+	"tags": ["scope:backend"]
+}

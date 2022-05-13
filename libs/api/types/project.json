@@ -1,0 +1,22 @@
+{
+	"root": "libs/api/types",
+	"sourceRoot": "libs/api/types/src",
+	"targets": {
+		"lint": {
+			"executor": "@nrwl/linter:eslint",
+			"outputs": ["{options.outputFile}"],
+			"options": {
+				"lintFilePatterns": ["libs/api/types/**/*.ts"]
+			}
+		},
+		"test": {
+			"executor": "@nrwl/jest:jest",
+			"outputs": ["coverage/libs/api/types"],
+			"options": {
+				"jestConfig": "libs/api/types/jest.config.ts",
+				"passWithNoTests": true
+			}
+		}
+	},
+	"tags": ["scope:backend"]
+}

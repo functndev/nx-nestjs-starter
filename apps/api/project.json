@@ -43,10 +43,10 @@
 			"executor": "@nrwl/jest:jest",
 			"outputs": ["coverage/apps/api"],
 			"options": {
-				"jestConfig": "apps/api/jest.config.js",
+				"jestConfig": "apps/api/jest.config.ts",
 				"passWithNoTests": true
 			}
 		}
 	},
-	"tags": ["scope:backend"]
+	"tags": ["scope:backend-app"]
 }
