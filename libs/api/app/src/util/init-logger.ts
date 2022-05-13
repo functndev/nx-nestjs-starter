@@ -14,7 +14,7 @@ const severity = switchCase<string, string>({
 	['fatal']: 'CRITICAL',
 })('DEFAULT');
 
-const level = (label: string) => ({ severity: severity(label) });
+const level = (label: string, level: number) => ({ severity: severity(label), level });
 
 export const pinoLoggerConfigOptions: LoggerModuleAsyncParams = {
 	inject: [ConfigService],
