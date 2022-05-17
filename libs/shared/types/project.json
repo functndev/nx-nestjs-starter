@@ -1,5 +1,4 @@
 {
-	"root": "libs/shared/types",
 	"sourceRoot": "libs/shared/types/src",
 	"targets": {
 		"build": {

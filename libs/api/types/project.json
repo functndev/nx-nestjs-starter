@@ -1,5 +1,4 @@
 {
-	"root": "libs/api/types",
 	"sourceRoot": "libs/api/types/src",
 	"targets": {
 		"lint": {

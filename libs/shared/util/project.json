@@ -1,5 +1,4 @@
 {
-	"root": "libs/shared/util",
 	"sourceRoot": "libs/shared/util/src",
 	"targets": {
 		"build": {

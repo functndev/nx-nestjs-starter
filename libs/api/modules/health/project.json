@@ -1,5 +1,4 @@
 {
-	"root": "libs/api/modules/health",
 	"sourceRoot": "libs/api/modules/health/src",
 	"targets": {
 		"lint": {

@@ -1,5 +1,4 @@
 {
-	"root": "libs/api/modules/core",
 	"sourceRoot": "libs/api/modules/core/src",
 	"targets": {
 		"lint": {
