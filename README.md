@@ -15,6 +15,16 @@ The nest portion of this repo has a few features to get you started more easily:
 - some super fast pino http logging
 - automatic request validation
 
+### Non-Features
+
+I've intentionally left out the authentication part, as there is a good tutorial on the
+nestjs website. Our authentication needs oftentimes differ a lot, as we are sometimes
+behind auth proxies and need to handle headers and other times we have to implement a
+custom full-blown auth solution.
+
+I just left in the `express-session` package as it might come in handy in more api
+projects just to keep track of different requesters.
+
 ### Folder Architecture
 
 This repo contains a starting template implementation of a nestjs app called `api`.
