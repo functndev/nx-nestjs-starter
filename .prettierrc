@@ -3,5 +3,6 @@
 	"trailingComma": "all",
 	"endOfLine": "lf",
 	"printWidth": 90,
-	"useTabs": true
+	"useTabs": true,
+	"proseWrap": "always"
 }
