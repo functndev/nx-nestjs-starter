@@ -23,7 +23,7 @@ export class ExceptionLoggerFilter implements ExceptionFilter<unknown> {
 		const status = e.getStatus();
 
 		!isApiException(e) &&
-			this.pinoLogger.error(
+			this.pinoLogger.warn(
 				{ error: e },
 				`[WARNING]: A plain non translated error was thrown.`,
 			);

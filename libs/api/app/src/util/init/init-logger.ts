@@ -27,6 +27,7 @@ export const pinoLoggerConfigOptions: LoggerModuleAsyncParams = {
 			redact: {
 				paths: ['req.headers.cookie', 'res.headers["set-cookie"]'],
 			},
+			quietReqLogger: true,
 		},
 	}),
 };

@@ -1,3 +1,5 @@
+import type { ReqId } from 'pino-http';
+
 export interface I18nExceptionResponseInterface {
 	statusCode: number;
 	message: string;
@@ -5,4 +7,5 @@ export interface I18nExceptionResponseInterface {
 	i18nMessage: string;
 	lngKeys: string[];
 	errorLng: string;
+	id: ReqId;
 }

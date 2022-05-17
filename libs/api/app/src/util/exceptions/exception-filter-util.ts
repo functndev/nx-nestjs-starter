@@ -8,8 +8,7 @@ import { StandardApiErrorsEnum } from './standard-api-errors.enum';
 import type { I18nReq } from '@nestjs-starter/api/types';
 import type { I18nExceptionResponseInterface } from '@nestjs-starter/shared/types';
 
-export const isApiException = (e: HttpException): e is BaseApiException =>
-	'apiErrorCode' in e;
+export const isApiException = (e: HttpException): e is BaseApiException => 'i18nKey' in e;
 
 const httpsStatusToLngKey = switchCase({
 	[HttpStatus.NOT_FOUND]: StandardApiErrorsEnum.NOT_FOUND,
@@ -29,6 +28,7 @@ export const getApiErrorResponse = (
 	i18nMessage: req.t(e.i18nKeys, e.metadata),
 	lngKeys: e.i18nKeys,
 	errorLng: req.language,
+	id: req.id,
 });
 
 export const getStandardErrorResponse = (
@@ -44,6 +44,7 @@ export const getStandardErrorResponse = (
 		i18nMessage: req.t(key),
 		lngKeys: [key],
 		errorLng: req.language,
+		id: req.id,
 	};
 };
 
@@ -57,4 +58,5 @@ export const getInternalServerErrorResponse = (
 	i18nMessage: req.t(StandardApiErrorsEnum.INTERNAL_SERVER_ERROR),
 	lngKeys: [StandardApiErrorsEnum.INTERNAL_SERVER_ERROR],
 	errorLng: req.language,
+	id: req.id,
 });
