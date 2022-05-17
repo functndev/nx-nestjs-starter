@@ -4,11 +4,14 @@
 	"license": "MIT",
 	"scripts": {
 		"start": "nx serve",
+		"start:api": "nx serve api",
 		"build": "nx build",
 		"test": "nx test",
 		"format:check": "nx format:check",
 		"format:write": "nx format:write",
 		"affected:lint": "nx affected:lint --maxWarnings 0 --parallel",
+		"prepre-commit": "lint-staged",
+		"pre-commit": "nx affected:lint --maxWarnings 0 --parallel",
 		"prepare": "husky install"
 	},
 	"private": true,

@@ -1,13 +1,7 @@
-### General architecture TODO:
-
-- some libs should not be able to require others to prevent circular dependencies (tags)
-- figure out complete folder structure
-
 ### NestJS todo
 
 - figure out complete translated error handling
 - add scaffolding for auth structure
-- think about how to handle global modules (do we want importable modules or just global modules)
 
 ## Folder Architecture
 
@@ -23,7 +17,7 @@ nestjs-starter
 └── libs
     ├── api
     │   ├── types                     (lib)
-    │   ├── util                      (lib)
+    │   ├── app                       (lib)
     │   │   ├── middlewares           (dir)
     │   │   ├── filters               (dir)
     │   │   └── decorators            (dir)
