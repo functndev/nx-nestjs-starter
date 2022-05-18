@@ -18,6 +18,7 @@
 		"noUncheckedIndexedAccess": true,
 		"noPropertyAccessFromIndexSignature": true,
 		"noImplicitOverride": true,
+		"useUnknownInCatchVariables": true,
 		"paths": {
 			"@nestjs-starter/api/app": ["libs/api/app/src/index.ts"],
 			"@nestjs-starter/api/modules/core": ["libs/api/modules/core/src/index.ts"],
