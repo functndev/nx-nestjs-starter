@@ -116,7 +116,7 @@ This is a WIP section - some conventions will probably be added on the go
 - then just install your dependencies via `npm i` in the root of the repo
 - to get started you can simply copy the `example.env` file to a fresh `.env` file located
   in the `./apps/api` folder
-- make sure to execute `docker-compose up -d` in the `./apps/api` folder to spin up your
+- make sure to execute `docker-compose up -d` (first start your Docker Desktop application if you're on a Mac) in the `./apps/api` folder to spin up your
   database, if you have set up your `.env` correctly compose should pick up your settings
 - `cd` into the `./apps/api` directory and execute the command `npx prisma db push` to
   initialize the database and generate the prisma client.
