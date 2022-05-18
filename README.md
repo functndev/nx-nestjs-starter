@@ -92,6 +92,10 @@ This is a WIP section - some conventions will probably be added on the go
   `./libs/api/types` and the second is in `./libs/shared/types` so it's clear what lib is
   the shared types and what lib is the api specific types. In general, we want to discuss
   new library names before we generate them.
+- **[Types]**: Always evaluate in which scope we need types. If the types are only needed
+  on module level, keep it in the module. If we need types on the api app level, put it in
+  the apps type lib. Always think on how we can keep changes local to a library to keep
+  the computation and build time as minimal as possible.
 
 ## Starting instructions
 
