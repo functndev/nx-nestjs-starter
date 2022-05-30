@@ -8,7 +8,7 @@ EXPOSE ${PORT}
 COPY ./package.json .
 COPY ./package-lock.json .
 
-RUN npm install --production
+RUN npm install --production --ignore-scripts
 RUN npm install @nrwl/cli@$(node -pe "require('./package').devDependencies['@nrwl/cli']") --ignore-scripts
 
 COPY . .
