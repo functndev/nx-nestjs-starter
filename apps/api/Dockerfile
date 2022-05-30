@@ -21,4 +21,4 @@ RUN npm prune --production
 
 ENV NODE_ENV production
 
-CMD ["node","dist/apps/backend/main.js"]
+CMD ["node", "dist/apps/api/main.js"]
