@@ -8,7 +8,8 @@ import { StandardApiErrorsEnum } from './standard-api-errors.enum';
 import type { I18nReq } from '@nestjs-starter/api/types';
 import type { I18nExceptionResponseInterface } from '@nestjs-starter/shared/types';
 
-export const isApiException = (e: HttpException): e is BaseApiException => 'i18nKey' in e;
+export const isApiException = (e: HttpException): e is BaseApiException =>
+	'i18nKeys' in e;
 
 const httpsStatusToLngKey = switchCase({
 	[HttpStatus.NOT_FOUND]: StandardApiErrorsEnum.NOT_FOUND,
