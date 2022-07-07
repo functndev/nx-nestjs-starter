@@ -10,9 +10,10 @@
 		"format:check": "nx format:check",
 		"format:write": "nx format:write",
 		"affected:lint": "nx affected:lint --maxWarnings 0 --parallel",
-		"prepre-commit": "lint-staged",
-		"pre-commit": "nx affected:lint --maxWarnings 0 --parallel",
-		"prepare": "husky install && npx prisma generate --schema ./apps/api/schema.prisma"
+		"prepare": "husky install && npx prisma generate --schema ./apps/api/schema.prisma",
+		"db-format": "npx prisma format --schema ./apps/api/schema.prisma",
+		"prelint-staged": "npm run db-format",
+		"lint-staged": "nx format:write --uncommitted"
 	},
 	"private": true,
 	"dependencies": {
@@ -68,7 +69,7 @@
 		"typescript": "~4.6.4"
 	},
 	"lint-staged": {
-		"*.{ts,tsx,js,css,md,json}": "nx format:write --uncommitted"
+		"*.{ts,tsx,js,css,md,json,prisma}": "npm run lint-staged"
 	},
 	"engines": {
 		"node": ">=16.0.0",
