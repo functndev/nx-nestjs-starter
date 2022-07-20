@@ -60,7 +60,13 @@
 						"pathGroupsExcludedImportTypes": ["type"]
 					}
 				],
-				"@typescript-eslint/consistent-type-imports": ["error"]
+				"@typescript-eslint/consistent-type-imports": ["error"],
+				"no-console": [
+					"error",
+					{
+						"allow": ["warn", "error"]
+					}
+				]
 			}
 		},
 		{
