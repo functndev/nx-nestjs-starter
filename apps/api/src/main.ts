@@ -11,16 +11,16 @@ import {
 	getValidationPipe,
 	initI18n,
 	initExpressSession,
+	en,
 } from '@nestjs-starter/api/modules/core';
 
 import { AppModule } from './app/app.module';
-import en from './assets/en.json';
 
 const now = performance.now();
 
-initI18n({ en });
-
 async function bootstrap() {
+	await initI18n({ en });
+
 	const app = await NestFactory.create(AppModule, { bufferLogs: true });
 
 	const config = app.get(ConfigService);
