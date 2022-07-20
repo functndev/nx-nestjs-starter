@@ -1,9 +1,7 @@
 import { PrismaSessionStore } from '@quixo3/prisma-session-store';
 import { default as session } from 'express-session';
 
-import { PrismaService } from '@nestjs-starter/api/modules/global';
-
-import type { ConfigService } from '@nestjs-starter/api/modules/global';
+import type { PrismaService, ConfigService } from '@nestjs-starter/api/modules/global';
 
 export const initExpressSession = (config: ConfigService, prisma: PrismaService) =>
 	session({

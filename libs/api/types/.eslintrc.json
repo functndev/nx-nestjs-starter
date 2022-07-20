@@ -3,6 +3,9 @@
 	"ignorePatterns": ["!**/*"],
 	"overrides": [
 		{
+			"parserOptions": {
+				"emitDecoratorMetadata": true
+			},
 			"files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
 			"rules": {}
 		},
