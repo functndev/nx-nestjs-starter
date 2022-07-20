@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectPinoLogger, PinoLogger } from 'nestjs-pino';
 
 import { ConfigService } from '@nestjs-starter/api/modules/global';
+import { InternalServerApiException } from '@nestjs-starter/api/app';
 
 @Injectable()
 export class HealthService {
@@ -14,5 +15,9 @@ export class HealthService {
 	public getHealth(): string {
 		this.pinoLogger.info('Health info requested.');
 		return `[${this.configService.nodeEnv}] - alive!`;
+	}
+
+	public testError(): never {
+		throw new InternalServerApiException();
 	}
 }
