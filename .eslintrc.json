@@ -24,7 +24,7 @@
 							},
 							{
 								"sourceTag": "scope:backend-core",
-								"onlyDependOnLibsWithTags": ["scope:backend"],
+								"onlyDependOnLibsWithTags": ["scope:backend", "scope:shared"],
 								"notDependOnLibsWithTags": ["scope:frontend"],
 								"bannedExternalImports": ["*react*"]
 							},
