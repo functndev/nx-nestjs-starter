@@ -1,7 +1,7 @@
 {
 	"root": true,
 	"ignorePatterns": ["**/*"],
-	"plugins": ["@nrwl/nx"],
+	"plugins": ["@nrwl/nx", "import"],
 	"overrides": [
 		{
 			"files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
@@ -36,7 +36,31 @@
 							}
 						]
 					}
-				]
+				],
+				"import/first": ["error"],
+				"import/no-useless-path-segments": ["error"],
+				"import/no-duplicates": ["error"],
+				"import/order": [
+					"error",
+					{
+						"pathGroups": [
+							{
+								"pattern": "@nestjs-starter/**",
+								"group": "internal"
+							}
+						],
+						"groups": [
+							["external", "builtin"],
+							"internal",
+							["index", "sibling", "parent"],
+							"object",
+							"type"
+						],
+						"newlines-between": "always",
+						"pathGroupsExcludedImportTypes": ["type"]
+					}
+				],
+				"@typescript-eslint/consistent-type-imports": ["error"]
 			}
 		},
 		{

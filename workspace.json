@@ -9,5 +9,6 @@
 		"api-types": "libs/api/types",
 		"shared-types": "libs/shared/types",
 		"shared-util": "libs/shared/util"
-	}
+	},
+	"$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }

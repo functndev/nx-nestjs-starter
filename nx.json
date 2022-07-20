@@ -3,9 +3,6 @@
 	"affected": {
 		"defaultBase": "main"
 	},
-	"cli": {
-		"defaultCollection": "@nrwl/nest"
-	},
 	"implicitDependencies": {
 		"package.json": {
 			"dependencies": "*",
@@ -21,13 +18,11 @@
 			}
 		}
 	},
-	"targetDependencies": {
-		"build": [
-			{
-				"target": "build",
-				"projects": "dependencies"
-			}
-		]
-	},
-	"defaultProject": "api"
+	"defaultProject": "api",
+	"$schema": "./node_modules/nx/schemas/nx-schema.json",
+	"targetDefaults": {
+		"build": {
+			"dependsOn": ["^build"]
+		}
+	}
 }

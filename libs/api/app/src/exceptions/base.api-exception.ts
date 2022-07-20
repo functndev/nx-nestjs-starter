@@ -1,4 +1,6 @@
-import { HttpException, HttpStatus } from '@nestjs/common';
+import { HttpException } from '@nestjs/common';
+
+import type { HttpStatus } from '@nestjs/common';
 
 export class BaseApiException extends HttpException {
 	public readonly i18nKeys: string[];

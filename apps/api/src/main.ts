@@ -14,7 +14,6 @@ import {
 } from '@nestjs-starter/api/modules/core';
 
 import { AppModule } from './app/app.module';
-
 import en from './assets/en.json';
 
 const now = performance.now();

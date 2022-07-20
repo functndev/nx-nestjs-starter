@@ -1,7 +1,7 @@
-import { TFunction, default as i18next } from 'i18next';
+import { default as i18next } from 'i18next';
 import { default as middleware } from 'i18next-http-middleware';
 
-import type { Resource } from 'i18next';
+import type { Resource, TFunction } from 'i18next';
 
 export const initI18n = (resources: Resource): Promise<TFunction> =>
 	i18next.use(middleware.LanguageDetector).init({

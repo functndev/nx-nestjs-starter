@@ -1,10 +1,11 @@
-import { HttpException, HttpStatus } from '@nestjs/common';
+import { HttpStatus } from '@nestjs/common';
 
 import { switchCase } from '@nestjs-starter/shared/util';
 
-import { BaseApiException } from '../../exceptions';
 import { StandardApiErrorsEnum } from './standard-api-errors.enum';
 
+import type { BaseApiException } from '../../exceptions';
+import type { HttpException } from '@nestjs/common';
 import type { I18nReq } from '@nestjs-starter/api/types';
 import type { I18nExceptionResponseInterface } from '@nestjs-starter/shared/types';
 
