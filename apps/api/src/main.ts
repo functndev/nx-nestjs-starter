@@ -3,25 +3,32 @@ import { Logger } from 'nestjs-pino';
 import { default as helmet } from 'helmet';
 import { default as cookieParser } from 'cookie-parser';
 import { performance } from 'perf_hooks';
+import { VersioningType } from '@nestjs/common';
 
 import {
 	ConfigService,
-	PrismaService,
-	i18nMiddleware,
+	en,
 	getValidationPipe,
-	initI18n,
+	i18nMiddleware,
 	initExpressSession,
+	initI18n,
+	PrismaService,
+	initSwaggerModule,
 } from '@nestjs-starter/api/modules/core';
 
 import { AppModule } from './app/app.module';
-import en from './assets/en.json';
 
 const now = performance.now();
 
-initI18n({ en });
-
 async function bootstrap() {
+	await initI18n({ en });
+
 	const app = await NestFactory.create(AppModule, { bufferLogs: true });
+
+	app.enableVersioning({
+		type: VersioningType.URI,
+		defaultVersion: '1',
+	});
 
 	const config = app.get(ConfigService);
 	const logger = app.get(Logger);
@@ -35,6 +42,10 @@ async function bootstrap() {
 	app.useGlobalPipes(getValidationPipe(config));
 	app.use(i18nMiddleware);
 	app.use(initExpressSession(config, prisma));
+
+	app.setGlobalPrefix('api');
+
+	initSwaggerModule(app, config);
 
 	await app.listen(config.port);
 

@@ -1,6 +1,6 @@
 import { APP_FILTER } from '@nestjs/core';
 
-import { ExceptionLoggerFilter } from '../../filters';
+import { ExceptionLoggerFilter } from '@nestjs-starter/api/app';
 
 import type { Provider } from '@nestjs/common';
 
