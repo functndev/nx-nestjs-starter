@@ -65,7 +65,7 @@ export class ExceptionLoggerFilter implements ExceptionFilter<unknown> {
 			.json(getInternalServerErrorResponse(req, e));
 	}
 
-	catch(e: unknown, host: ArgumentsHost): void {
+	public catch(e: unknown, host: ArgumentsHost): void {
 		const httpHost = host.switchToHttp();
 		const req = httpHost.getRequest<I18nReq>();
 		const res = httpHost.getResponse<Response>();

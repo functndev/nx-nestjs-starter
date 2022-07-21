@@ -14,31 +14,31 @@ export class ConfigService {
 		return this.config.get(path, { infer: true });
 	}
 
-	get nodeEnv() {
+	public get nodeEnv() {
 		return this.getInferred('NODE_ENV');
 	}
 
-	get port() {
+	public get port() {
 		return this.getInferred('PORT');
 	}
 
-	get secret() {
+	public get secret() {
 		return this.getInferred('SECRET');
 	}
 
-	get sessionSecret() {
+	public get sessionSecret() {
 		return this.getInferred('SESSION_SECRET');
 	}
 
-	get isDevEnv() {
+	public get isDevEnv() {
 		return this.nodeEnv === 'development';
 	}
 
-	get isProdEnv() {
+	public get isProdEnv() {
 		return !this.isDevEnv;
 	}
 
-	get swaggerAuth() {
+	public get swaggerAuth() {
 		return {
 			swaggerUser: this.getInferred('SWAGGER_USER'),
 			swaggerPw: this.getInferred('SWAGGER_PW'),

@@ -60,7 +60,6 @@
 						"pathGroupsExcludedImportTypes": ["type"]
 					}
 				],
-				"@typescript-eslint/consistent-type-imports": ["error"],
 				"no-console": [
 					"error",
 					{
@@ -72,7 +71,25 @@
 		{
 			"files": ["*.ts", "*.tsx"],
 			"extends": ["plugin:@nrwl/nx/typescript"],
-			"rules": {}
+			"rules": {
+				"@typescript-eslint/consistent-type-imports": ["error"],
+				"@typescript-eslint/naming-convention": [
+					"error",
+					{ "selector": "interface", "format": ["PascalCase"] },
+					{ "selector": "class", "format": ["PascalCase"] },
+					{ "selector": "typeAlias", "format": ["PascalCase"] }
+				],
+				"@typescript-eslint/explicit-member-accessibility": [
+					"error",
+					{
+						"accessibility": "explicit",
+						"overrides": {
+							"constructors": "no-public",
+							"properties": "no-public"
+						}
+					}
+				]
+			}
 		},
 		{
 			"files": ["*.js", "*.jsx"],
