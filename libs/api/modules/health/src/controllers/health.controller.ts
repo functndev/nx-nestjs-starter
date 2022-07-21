@@ -16,7 +16,7 @@ export class HealthController {
 		summary: 'Test health',
 	})
 	@ApiOkResponse({ type: String })
-	getHealth() {
+	public getHealth() {
 		return this.healthService.getHealth();
 	}
 
@@ -25,7 +25,7 @@ export class HealthController {
 		description: 'This endpoint is there to test exceptions.',
 		summary: 'Test exceptions',
 	})
-	getError() {
+	public getError() {
 		return this.healthService.testError();
 	}
 }

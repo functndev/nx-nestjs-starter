@@ -4,8 +4,8 @@ import type { LngFilePath } from '../types';
 import type { HttpStatus } from '@nestjs/common';
 
 export class BaseApiException extends HttpException {
-	public readonly i18nKeys: LngFilePath[];
-	public readonly metadata: Record<string, unknown>;
+	readonly i18nKeys: LngFilePath[];
+	readonly metadata: Record<string, unknown>;
 
 	constructor(
 		statusCode: HttpStatus,
