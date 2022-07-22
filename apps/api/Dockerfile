@@ -13,7 +13,8 @@ RUN npm install @nrwl/cli@$(node -pe "require('./package').devDependencies['@nrw
 
 COPY . .
 
-RUN npx prisma generate --schema ./apps/api/schema.prisma
+RUN npx prisma migrate deploy
+RUN npx prisma generate
 
 RUN npx nx build api --prod
 
