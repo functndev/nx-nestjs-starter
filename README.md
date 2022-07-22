@@ -70,33 +70,6 @@ nestjs-starter
         └── types                     (lib)
 ```
 
-### Conventions
-
-This is a WIP section - some conventions will probably be added on the go
-
-- **[Exports]**: We create `index.ts` files in every folder to make sure we have barrel
-  exports for every folder
-- **[Module Boundaries]**: When you want to control the exports you can either do that on
-  the folder level or just make sure you only export certain functions that should be
-  exposed
-- **[Exceptions]**: When you're throwing an error - make sure you throw one of the
-  translated errors in the exceptions' folder in the app lib.
-- **[Import structure]**: The imports are always structured in a certain way: First
-  external, then internal, then local and finally type imports. Make sure to always use
-  `import type` to avoid making the bundle bigger than it has to be.
-- **[Types]**: Types always go to a type library. Either it's a shared type that can be
-  put into `./libs/shared/types` or it's a backend specific type that can (or even should)
-  live in `./libs/api/types`.
-- **[Libraries]**: The naming convention is to group libraries into folders to generate
-  meaningful names. For example there are two "types" libraries, but the first is in
-  `./libs/api/types` and the second is in `./libs/shared/types` so it's clear what lib is
-  the shared types and what lib is the api specific types. In general, we want to discuss
-  new library names before we generate them.
-- **[Where to put code]**: Always evaluate in which scope we need types/util/other code.
-  If it's only needed on module level, keep it in the module. If we need it on the api app
-  level, put it in the apps' lib. Always think on how we can keep changes local to a
-  library to keep the computation and build time as minimal as possible.
-
 ## Starting instructions
 
 ### Prerequisites
@@ -113,13 +86,14 @@ This is a WIP section - some conventions will probably be added on the go
 
 - first you need to install the `nx` cli globally to make your life easier with
   `npm install -g nx`
-- then just install your dependencies via `npm i` in the root of the repo
-- to get started you can simply copy the `example.env` file to a fresh `.env` file located
-  in the `./apps/api` folder
-- make sure to execute `docker-compose up -d` (first start your Docker Desktop application if you're on a Mac) in the `./apps/api` folder to spin up your
-  database, if you have set up your `.env` correctly compose should pick up your settings
-- `cd` into the `./apps/api` directory and execute the command `npx prisma db push` to
-  initialize the database and generate the prisma client.
+- then just install your dependencies via `npm install` in the root of the repo
+- to get started you can simply copy the `.example.env` file to a fresh `.env` file
+  located in the root and `./apps/api` folders
+- make sure to execute `docker-compose up -d` (first start your Docker Desktop application
+  if you're on a Mac) in the root folder to spin up your database, if you have set up your
+  `.env` correctly compose should pick up your settings
+- execute the command `npm run db-migrate-dev` to initialize the database and generate the
+  prisma client.
 
 If you have done all those steps you can start your application by executing `nx serve` or
 `nx serve api` which will start an auto hot reloading development server. You can also use

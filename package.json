@@ -11,10 +11,20 @@
 		"format:write": "nx format:write",
 		"affected:lint": "nx affected:lint --maxWarnings 0 --parallel",
 		"affected:lint:fix": "nx affected:lint --maxWarnings 0 --parallel --fix",
-		"prepare": "husky install && npx prisma generate --schema ./apps/api/schema.prisma",
-		"db-format": "npx prisma format --schema ./apps/api/schema.prisma",
+		"preprepare": "husky install",
+		"prepare": "npx prisma generate",
+		"db-push": "npx prisma db push",
+		"db-validate": "npx prisma validate",
+		"db-format": "npx prisma format",
+		"db-migrate-dev": "npx prisma migrate dev",
+		"db-migrate-reset": "npx prisma migrate reset",
+		"db-seed": "npx prisma db seed",
+		"prisma-generate": "npx prisma generate",
 		"prelint-staged": "npm run db-format",
 		"lint-staged": "nx format:write --uncommitted"
+	},
+	"prisma": {
+		"seed": "ts-node --skip-project prisma/seed.ts"
 	},
 	"private": true,
 	"dependencies": {
