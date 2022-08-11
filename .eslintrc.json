@@ -14,7 +14,8 @@
 						"depConstraints": [
 							{
 								"sourceTag": "scope:shared",
-								"onlyDependOnLibsWithTags": ["scope:shared"]
+								"onlyDependOnLibsWithTags": ["scope:shared"],
+								"bannedExternalImports": ["*react*", "*prisma*"]
 							},
 							{
 								"sourceTag": "scope:backend",
