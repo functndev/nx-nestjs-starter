@@ -1,3 +1,4 @@
+/* eslint-disable */
 export default {
 	displayName: 'api-modules-health',
 	preset: '../../../../jest.preset.js',
