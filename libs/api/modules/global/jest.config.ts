@@ -1,3 +1,4 @@
+/* eslint-disable */
 export default {
 	displayName: 'api-modules-global',
 	preset: '../../../../jest.preset.js',

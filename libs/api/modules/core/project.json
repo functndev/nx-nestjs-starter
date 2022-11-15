@@ -1,4 +1,5 @@
 {
+	"name": "api-modules-core",
 	"$schema": "../../../../node_modules/nx/schemas/project-schema.json",
 	"sourceRoot": "libs/api/modules/core/src",
 	"targets": {
@@ -11,7 +12,7 @@
 		},
 		"test": {
 			"executor": "@nrwl/jest:jest",
-			"outputs": ["coverage/libs/api/modules/core"],
+			"outputs": ["{workspaceRoot}/coverage/libs/api/modules/core"],
 			"options": {
 				"jestConfig": "libs/api/modules/core/jest.config.ts",
 				"passWithNoTests": true
