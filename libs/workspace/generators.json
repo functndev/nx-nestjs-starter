@@ -1,0 +1,12 @@
+{
+	"$schema": "http://json-schema.org/schema",
+	"name": "workspace-extensions",
+	"version": "0.0.1",
+	"generators": {
+		"nest-library": {
+			"factory": "./src/generators/nest-library/generator",
+			"schema": "./src/generators/nest-library/schema.json",
+			"description": "nest-library generator"
+		}
+	}
+}
