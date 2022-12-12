@@ -1,6 +1,6 @@
 {
-	"$schema": "../../node_modules/nx/schemas/project-schema.json",
 	"name": "workspace",
+	"$schema": "../../node_modules/nx/schemas/project-schema.json",
 	"sourceRoot": "libs/workspace/src",
 	"projectType": "library",
 	"targets": {
