@@ -6,5 +6,6 @@ export const getValidationPipe = (config: ConfigService) =>
 	new ValidationPipe({
 		transform: true,
 		whitelist: true,
+		forbidUnknownValues: config.isProdEnv,
 		disableErrorMessages: config.isProdEnv,
 	});
