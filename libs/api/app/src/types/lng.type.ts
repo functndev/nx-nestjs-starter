@@ -1,6 +1,6 @@
 import type { en, de } from '..';
-import type { NestedPaths } from '@nestjs-starter/shared/types';
+import type { Path } from '@nestjs/config';
 
 type LngType = typeof en | typeof de;
 
-export type LngFilePath = NestedPaths<LngType['translation']>;
+export type LngFilePath = Path<LngType['translation']>;
