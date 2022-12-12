@@ -76,9 +76,18 @@
 				"@typescript-eslint/consistent-type-imports": ["error"],
 				"@typescript-eslint/naming-convention": [
 					"error",
-					{ "selector": "interface", "format": ["PascalCase"] },
-					{ "selector": "class", "format": ["PascalCase"] },
-					{ "selector": "typeAlias", "format": ["PascalCase"] }
+					{
+						"selector": "interface",
+						"format": ["PascalCase"]
+					},
+					{
+						"selector": "class",
+						"format": ["PascalCase"]
+					},
+					{
+						"selector": "typeAlias",
+						"format": ["PascalCase"]
+					}
 				],
 				"@typescript-eslint/explicit-member-accessibility": [
 					"error",
@@ -95,6 +104,11 @@
 		{
 			"files": ["*.js", "*.jsx"],
 			"extends": ["plugin:@nrwl/nx/javascript"],
+			"rules": {}
+		},
+		{
+			"files": "*.json",
+			"parser": "jsonc-eslint-parser",
 			"rules": {}
 		}
 	]
