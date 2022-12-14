@@ -15,24 +15,21 @@
 							{
 								"sourceTag": "scope:shared",
 								"onlyDependOnLibsWithTags": ["scope:shared"],
-								"bannedExternalImports": ["*react*", "*prisma*"]
+								"bannedExternalImports": ["*react*", "*prisma*", "*nest*"]
 							},
 							{
 								"sourceTag": "scope:backend",
 								"onlyDependOnLibsWithTags": ["scope:backend", "scope:shared"],
-								"notDependOnLibsWithTags": ["scope:frontend"],
 								"bannedExternalImports": ["*react*"]
 							},
 							{
 								"sourceTag": "scope:backend-core",
 								"onlyDependOnLibsWithTags": ["scope:backend", "scope:shared"],
-								"notDependOnLibsWithTags": ["scope:frontend"],
 								"bannedExternalImports": ["*react*"]
 							},
 							{
 								"sourceTag": "scope:backend-app",
 								"onlyDependOnLibsWithTags": ["scope:backend-core"],
-								"notDependOnLibsWithTags": ["scope:frontend"],
 								"bannedExternalImports": ["*react*"]
 							}
 						]

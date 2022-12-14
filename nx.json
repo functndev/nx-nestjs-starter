@@ -1,4 +1,5 @@
 {
+	"$schema": "./node_modules/nx/schemas/nx-schema.json",
 	"npmScope": "nestjs-starter",
 	"affected": {
 		"defaultBase": "main"
@@ -11,8 +12,6 @@
 			}
 		}
 	},
-	"defaultProject": "api",
-	"$schema": "./node_modules/nx/schemas/nx-schema.json",
 	"targetDefaults": {
 		"build": {
 			"dependsOn": ["^build"],
@@ -35,5 +34,21 @@
 			"!{projectRoot}/jest.config.[jt]s",
 			"!{projectRoot}/.eslintrc.json"
 		]
-	}
+	},
+	"generators": {
+		"@nrwl/nest": {
+			"library": {
+				"tags": "scope:backend"
+			},
+			"application": {
+				"tags": "scope:backend-app"
+			}
+		},
+		"@nestjs-starter/workspace": {
+			"nest-library": {
+				"tags": "scope:backend"
+			}
+		}
+	},
+	"defaultProject": "api"
 }

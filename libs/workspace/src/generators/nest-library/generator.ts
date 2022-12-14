@@ -20,9 +20,7 @@ export default async function (tree: Tree, options: LibraryGeneratorOptions) {
 
 	const projectRoot = joinPathFragments(libsDir, projectDirectory);
 
-	const tags = `scope:backend`;
-
-	await libraryGenerator(tree, { ...options, tags });
+	await libraryGenerator(tree, { ...options });
 
 	generateFiles(tree, joinPathFragments(__dirname, './files'), projectRoot, {
 		...options,
