@@ -1,6 +1,6 @@
 export type EnvironmentType = {
 	NODE_ENV: 'development' | 'production';
-	PORT: number;
+	PORT: string;
 
 	SECRET: string;
 	SESSION_SECRET: string;

@@ -4,10 +4,15 @@ import { LoggerModule } from 'nestjs-pino';
 import { HealthModule } from '@nestjs-starter/api/modules/health';
 import { GlobalModule } from '@nestjs-starter/api/modules/global';
 
-import { GlobalExceptionFilterProvider, pinoLoggerConfigOptions } from './init';
+import {
+	ConfigModuleImport,
+	GlobalExceptionFilterProvider,
+	pinoLoggerConfigOptions,
+} from './init';
 
 @Module({
 	imports: [
+		ConfigModuleImport,
 		LoggerModule.forRootAsync(pinoLoggerConfigOptions),
 		GlobalModule,
 		HealthModule,
