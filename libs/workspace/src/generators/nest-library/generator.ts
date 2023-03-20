@@ -3,11 +3,20 @@ import {
 	getWorkspaceLayout,
 	joinPathFragments,
 	names,
+	offsetFromRoot,
 } from '@nrwl/devkit';
 import { libraryGenerator } from '@nrwl/nest';
 
 import type { Tree } from '@nrwl/devkit';
 import type { LibraryGeneratorOptions } from './schema';
+
+export function getRelativePathToRootFile(
+	tree: Tree,
+	targetPath: string,
+	fileName: string,
+): string {
+	return offsetFromRoot(targetPath) + fileName;
+}
 
 export default async function (tree: Tree, options: LibraryGeneratorOptions) {
 	const { libsDir } = getWorkspaceLayout(tree);
@@ -24,6 +33,8 @@ export default async function (tree: Tree, options: LibraryGeneratorOptions) {
 
 	generateFiles(tree, joinPathFragments(__dirname, './files'), projectRoot, {
 		...options,
+		rootTsConfigPath: getRelativePathToRootFile(tree, projectRoot, 'tsconfig.base.json'),
+		rootEslintRCPath: getRelativePathToRootFile(tree, projectRoot, '.eslintrc.json'),
 		name: names(options.name).className,
 		tmpl: '',
 	});
