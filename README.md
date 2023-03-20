@@ -39,11 +39,21 @@ to also remove all excess tables from the prisma schema if you do so.
   grasp the whole concept - there are a lot of short introduction guides and videos to get
   you started.
 
+### First time setup
+
+If you just seeded your project with this template you need to follow some basic setup
+steps. If somebody already set up the project you can skip this section.
+
+- you have to rename all instances of "@nestjs-starter" with your project name. There is a
+  convenience script in the root of the project which you can use
+  (`./setup_repo.sh -new "@your-new-project"`), otherwise you can just search-replace it
+  yourself.
+
 ### Getting started
 
-- first you need to install the `nx` cli globally to make your life easier with
+- install your dependencies via `npm install` in the root of the repo
+- optionally you can install the `nx` cli globally to make your life easier with
   `npm install -g nx` (otherwise you can also do `npx nx`)
-- then just install your dependencies via `npm install` in the root of the repo
 - to get started you can simply copy the `.example.env` file to a fresh `.env` file
   located in the root and `./apps/api` folders
 - make sure to execute `docker-compose up -d` (first start your Docker Desktop application
