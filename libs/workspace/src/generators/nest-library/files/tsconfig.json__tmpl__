@@ -1,16 +1,16 @@
 {
-	"extends": "../../tsconfig.base.json",
+	"extends": "<%= rootTsConfigPath %>",
 	"compilerOptions": {
+		"module": "commonjs",
 		"esModuleInterop": true,
-		"resolveJsonModule": true,
-		"emitDecoratorMetadata": true,
-		"target": "ES2021"
+		"target": "ES2021",
+		"lib": ["es2021"]
 	},
 	"files": [],
 	"include": [],
 	"references": [
 		{
-			"path": "./tsconfig.app.json"
+			"path": "./tsconfig.lib.json"
 		},
 		{
 			"path": "./tsconfig.spec.json"

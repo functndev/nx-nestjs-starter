@@ -38,15 +38,18 @@
 	"generators": {
 		"@nrwl/nest": {
 			"library": {
-				"tags": "scope:backend"
+				"tags": "scope:backend",
+				"target": "es2020"
 			},
 			"application": {
-				"tags": "scope:backend-app"
+				"tags": "scope:backend-app",
+				"target": "es2020"
 			}
 		},
 		"@nestjs-starter/workspace": {
 			"nest-library": {
-				"tags": "scope:backend"
+				"tags": "scope:backend",
+				"target": "es2020"
 			}
 		}
 	},

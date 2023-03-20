@@ -10,10 +10,12 @@ export const initSwaggerModule = (
 ): void => {
 	if (isProdEnv)
 		app.use(
-			'/api-docs*',
+			'/api/docs*',
 			basicAuth({
 				challenge: true,
-				users: swaggerAuth,
+				users: {
+					[swaggerAuth.swaggerUser]: swaggerAuth.swaggerPw,
+				},
 			}),
 		);
 
@@ -26,5 +28,5 @@ export const initSwaggerModule = (
 
 	const document = SwaggerModule.createDocument(app, options);
 
-	SwaggerModule.setup('api-docs', app, document);
+	SwaggerModule.setup('/api/docs', app, document);
 };
