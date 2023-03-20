@@ -1,4 +1,4 @@
-import { v4 } from 'uuid';
+import { randomUUID } from 'crypto';
 
 import { ConfigService } from '@nestjs-starter/api/modules/global';
 import { switchCase } from '@nestjs-starter/shared/util';
@@ -22,7 +22,7 @@ export const pinoLoggerConfigOptions: LoggerModuleAsyncParams = {
 		pinoHttp: {
 			formatters: { level },
 			transport: config.isDevEnv ? { target: 'pino-pretty' } : { target: 'pino/file' },
-			genReqId: () => v4(),
+			genReqId: () => randomUUID(),
 			level: 'debug',
 			redact: {
 				paths: ['req.headers.cookie', 'res.headers["set-cookie"]'],
