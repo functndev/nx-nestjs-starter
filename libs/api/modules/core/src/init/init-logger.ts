@@ -28,6 +28,16 @@ export const pinoLoggerConfigOptions: LoggerModuleAsyncParams = {
 				paths: ['req.headers.cookie', 'res.headers["set-cookie"]'],
 			},
 			quietReqLogger: true,
+			serializers: config.isDevEnv
+				? {
+						req: (req) => ({
+							url: req.url,
+						}),
+						res: (res) => ({
+							statusCode: res.statusCode,
+						}),
+				  }
+				: undefined,
 		},
 	}),
 };
