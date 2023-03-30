@@ -1,25 +1,41 @@
-FROM node:16-alpine
+FROM node:18-alpine as builder
+
+RUN corepack enable
+RUN corepack prepare pnpm@8.1.0 --activate
 
 WORKDIR /app
 
-ENV PORT 4200
-EXPOSE ${PORT}
-
 COPY ./package.json .
-COPY ./package-lock.json .
+COPY ./pnpm-lock.yaml .
 
-RUN npm install --production --ignore-scripts
-RUN npm install @nrwl/cli@$(node -pe "require('./package').devDependencies['@nrwl/cli']") --ignore-scripts
+RUN pnpm i --frozen-lockfile --ignore-scripts
+
+COPY ./prisma ./prisma
+
+RUN pnpm prisma generate
 
 COPY . .
 
-RUN npx prisma migrate deploy
-RUN npx prisma generate
+ENV NX_DAEMON false
 
-RUN npx nx build api --prod
+RUN pnpm nx build api --prod
 
-RUN npm prune --production
+FROM node:18-alpine as runner
+
+RUN corepack enable
+RUN corepack prepare pnpm@8.1.0 --activate
+
+WORKDIR /app
+
+COPY --from=builder /app/dist/apps/api /app
+COPY --from=builder /app/prisma /app/prisma
+
+RUN pnpm i --ignore-scripts
+RUN pnpm dlx prisma generate
 
 ENV NODE_ENV production
+ENV PORT 4200
 
-CMD ["node", "dist/apps/api/main.js"]
+EXPOSE ${PORT}
+
+CMD ["node", "main.js"]

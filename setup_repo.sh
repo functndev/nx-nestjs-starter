@@ -43,3 +43,5 @@ do
 done
 
 echo "Done"
+
+# Thanks to chat-GPT for making this possible
