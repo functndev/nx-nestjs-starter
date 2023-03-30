@@ -34,7 +34,9 @@ to also remove all excess tables from the prisma schema if you do so.
 - You'll need `docker` and `docker-compose` (or `docker compose`).
 - The node version is pinned to the current lts version of `node` which is 18 as the time
   of writing. (I recommend using [n](https://github.com/tj/n) for node version management)
-- This repo uses `npm` as package manager, which has to be major version 8
+- This repo uses `pnpm` as package manager, which has to be major version 8. Read up about
+  how to install it [here](https://pnpm.io/installation#using-corepack). The recommended
+  way is to use `corepack` which comes pre-installed with node.
 - Some basic understanding of [nx](https://nx.dev/) would be good to being able to better
   grasp the whole concept - there are a lot of short introduction guides and videos to get
   you started.
@@ -51,23 +53,20 @@ steps. If somebody already set up the project you can skip this section.
 
 ### Getting started
 
-- install your dependencies via `npm install` in the root of the repo
-- optionally you can install the `nx` cli globally to make your life easier with
-  `npm install -g nx` (otherwise you can also do `npx nx`)
+- install your dependencies via `pnpm install` in the root of the repo
 - to get started you can simply copy the `.example.env` file to a fresh `.env` file
-  located in the root and `./apps/api` folders
+  located in the root **AND** `./apps/api` folders. The root env is for docker-compose and
+  the api env is for the nestjs app.
 - make sure to execute `docker-compose up -d` (first start your Docker Desktop application
   if you're on a Mac) in the root folder to spin up your database, if you have set up your
   `.env` correctly compose should pick up your settings
-- execute the command `npm run db-migrate-dev` to initialize the database and generate the
-  prisma client.
-- also make sure to search-replace all occurrences of "nestjs-starter" with whatever your
-  project is called
+- execute the command `pnpm prisma:migrate:dev` to initialize the database and generate
+  the prisma client.
 
-If you have done all those steps you can start your application by executing `nx serve` or
-`nx serve api` which will start an auto hot reloading development server. You can also use
-the npm scripts via executing `npm start` or `npm run start:api`. If no project is
-specified nx will default to the api project.
+If you have done all those steps you can start your application by executing
+`pnpm nx serve` or `pnpm nx serve api` which will start an auto hot reloading development
+server. You can also use the npm scripts via executing `pnpm start` or
+`pnpm run start:api`. If no project is specified nx will default to the api project.
 
 All the most important commands are located in the "scripts" section in `package.json`.
 
@@ -79,7 +78,7 @@ changes and only applies actions to those affected libs/apps.
 If you want to see your affected libs/apps just type in the following command
 
 ```bash
-nx affected:graph
+pnpm nx affected:graph
 ```
 
 If you paid close attention, all the lint and build commands work with the "affected" part
@@ -95,14 +94,14 @@ standard config without having to consider that yourself. It's invoked by execut
 following command:
 
 ```bash
-npm run gen:lib:nest name-of-lib
+pnpm gen:lib:nest name-of-lib
 ```
 
 If you want to pass parameters, you have to use an extra double hyphen (thanks npm 🙄)
 like this:
 
 ```bash
-npm run gen:lib:nest name-of-lib -- --directory=api --dry-run
+pnpm gen:lib:nest name-of-lib -- --directory=api --dry-run
 ```
 
 - npm invokes the nx cli with our custom generator
@@ -116,13 +115,13 @@ If you happen to have generated a wrong lib you can always look at the `workspac
 file in the root and just remove the lib you just generated via this command:
 
 ```bash
-npm run rm:lib name-of-lib
+pnpm rm:lib name-of-lib
 ```
 
 You can also move libraries with the following command:
 
 ```bash
-npm run mv:lib -- --project name-of-lib --destination api/new-name-for-lib
+pnpm mv:lib -- --project name-of-lib --destination api/new-name-for-lib
 ```
 
 Don't forget the double `--` after the npm command though 🧐
