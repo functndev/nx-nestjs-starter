@@ -1,5 +1,7 @@
 FROM node:18-alpine as builder
-RUN npm i -g pnpm
+
+RUN corepack enable
+RUN corepack prepare pnpm@8.1.0 --activate
 
 WORKDIR /app
 
@@ -19,7 +21,9 @@ ENV NX_DAEMON false
 RUN pnpm nx build api --prod
 
 FROM node:18-alpine as runner
-RUN npm i -g pnpm
+
+RUN corepack enable
+RUN corepack prepare pnpm@8.1.0 --activate
 
 WORKDIR /app
 

@@ -2,7 +2,7 @@
   <configuration default="false" name="test api build" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
     <deployment type="dockerfile">
       <settings>
-        <option name="imageTag" value="latest" />
+        <option name="imageTag" value="nrwl-nx-nestjs-starter:latest" />
         <option name="buildKitEnabled" value="true" />
         <option name="containerName" value="nrwl-nx-nestjs-starter" />
         <option name="contextFolderPath" value="." />
