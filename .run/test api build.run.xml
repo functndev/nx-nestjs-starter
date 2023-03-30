@@ -1,0 +1,46 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="test api build" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+    <deployment type="dockerfile">
+      <settings>
+        <option name="imageTag" value="latest" />
+        <option name="buildKitEnabled" value="true" />
+        <option name="containerName" value="nrwl-nx-nestjs-starter" />
+        <option name="contextFolderPath" value="." />
+        <option name="envVars">
+          <list>
+            <DockerEnvVarImpl>
+              <option name="name" value="DATABASE_URL" />
+              <option name="value" value="postgresql://postgres:postgres@host.docker.internal:5432/api?schema=public" />
+            </DockerEnvVarImpl>
+            <DockerEnvVarImpl>
+              <option name="name" value="SECRET" />
+              <option name="value" value="desisamegasichasgeheimnisfuersdevelopn" />
+            </DockerEnvVarImpl>
+            <DockerEnvVarImpl>
+              <option name="name" value="SESSION_SECRET" />
+              <option name="value" value="meisessionsecretgehtdigoanixauheechtjetz" />
+            </DockerEnvVarImpl>
+            <DockerEnvVarImpl>
+              <option name="name" value="SWAGGER_PW" />
+              <option name="value" value="dev123" />
+            </DockerEnvVarImpl>
+            <DockerEnvVarImpl>
+              <option name="name" value="SWAGGER_USER" />
+              <option name="value" value="admin" />
+            </DockerEnvVarImpl>
+          </list>
+        </option>
+        <option name="portBindings">
+          <list>
+            <DockerPortBindingImpl>
+              <option name="containerPort" value="4200" />
+              <option name="hostPort" value="8080" />
+            </DockerPortBindingImpl>
+          </list>
+        </option>
+        <option name="sourceFilePath" value="apps/api/Dockerfile" />
+      </settings>
+    </deployment>
+    <method v="2" />
+  </configuration>
+</component>
