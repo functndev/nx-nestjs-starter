@@ -4,10 +4,10 @@ import {
 	joinPathFragments,
 	names,
 	offsetFromRoot,
-} from '@nrwl/devkit';
-import { libraryGenerator } from '@nrwl/nest';
+} from '@nx/devkit';
+import { libraryGenerator } from '@nx/nest';
 
-import type { Tree } from '@nrwl/devkit';
+import type { Tree } from '@nx/devkit';
 import type { LibraryGeneratorOptions } from './schema';
 
 export function getRelativePathToRootFile(

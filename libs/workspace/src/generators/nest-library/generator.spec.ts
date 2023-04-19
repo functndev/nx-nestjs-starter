@@ -1,10 +1,10 @@
-import { createTreeWithEmptyWorkspace } from '@nrwl/devkit/testing';
-import { readProjectConfiguration } from '@nrwl/devkit';
+import { createTreeWithEmptyWorkspace } from '@nx/devkit/testing';
+import { readProjectConfiguration } from '@nx/devkit';
 
 import generator from './generator';
 
 import type { LibraryGeneratorOptions } from './schema';
-import type { Tree } from '@nrwl/devkit';
+import type { Tree } from '@nx/devkit';
 
 describe('nest-library generator', () => {
 	let appTree: Tree;

@@ -4,14 +4,14 @@
 	"sourceRoot": "libs/api/modules/core/src",
 	"targets": {
 		"lint": {
-			"executor": "@nrwl/linter:eslint",
+			"executor": "@nx/linter:eslint",
 			"outputs": ["{options.outputFile}"],
 			"options": {
 				"lintFilePatterns": ["libs/api/modules/core/**/*.ts"]
 			}
 		},
 		"test": {
-			"executor": "@nrwl/jest:jest",
+			"executor": "@nx/jest:jest",
 			"outputs": ["{workspaceRoot}/coverage/libs/api/modules/core"],
 			"options": {
 				"jestConfig": "libs/api/modules/core/jest.config.ts",
