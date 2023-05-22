@@ -3,7 +3,6 @@
 	"$id": "NxNestLibraryGenerator",
 	"title": "Create a NestJS Library for Nx",
 	"description": "Create a NestJS Library for Nx.",
-	"cli": "nx",
 	"type": "object",
 	"examples": [
 		{

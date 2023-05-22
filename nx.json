@@ -6,10 +6,9 @@
 	},
 	"tasksRunnerOptions": {
 		"default": {
-			"runner": "@nrwl/nx-cloud",
+			"runner": "nx/tasks-runners/default",
 			"options": {
-				"cacheableOperations": ["build", "lint", "test", "e2e"],
-				"accessToken": "NWUyODMyMjQtZmQ1YS00ZWNjLWI3MjgtZmM4ZDFlMTc1NWI3fHJlYWQtd3JpdGU="
+				"cacheableOperations": ["build", "lint", "test", "e2e"]
 			}
 		}
 	},
@@ -37,19 +36,19 @@
 		]
 	},
 	"generators": {
-		"@nrwl/nest": {
+		"@nestjs-starter/workspace": {
+			"nest-library": {
+				"tags": "scope:backend",
+				"target": "es2020"
+			}
+		},
+		"@nx/nest": {
 			"library": {
 				"tags": "scope:backend",
 				"target": "es2020"
 			},
 			"application": {
 				"tags": "scope:backend-app",
-				"target": "es2020"
-			}
-		},
-		"@nestjs-starter/workspace": {
-			"nest-library": {
-				"tags": "scope:backend",
 				"target": "es2020"
 			}
 		}
