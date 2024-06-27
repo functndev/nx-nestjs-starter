@@ -15,7 +15,7 @@ import type { Response } from 'express';
 @Catch()
 export class ExceptionLoggerFilter implements ExceptionFilter<unknown> {
 	constructor(
-		@InjectPinoLogger(ExceptionLoggerFilter.name)
+		@InjectPinoLogger()
 		private readonly pinoLogger: PinoLogger,
 	) {}
 

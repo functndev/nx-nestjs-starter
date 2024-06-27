@@ -2,22 +2,17 @@
 	"name": "api-modules-core",
 	"$schema": "../../../../node_modules/nx/schemas/project-schema.json",
 	"sourceRoot": "libs/api/modules/core/src",
+	"tags": ["scope:backend-core"],
 	"targets": {
 		"lint": {
-			"executor": "@nx/linter:eslint",
-			"outputs": ["{options.outputFile}"],
-			"options": {
-				"lintFilePatterns": ["libs/api/modules/core/**/*.ts"]
-			}
+			"executor": "@nx/eslint:lint"
 		},
 		"test": {
 			"executor": "@nx/jest:jest",
 			"outputs": ["{workspaceRoot}/coverage/libs/api/modules/core"],
 			"options": {
-				"jestConfig": "libs/api/modules/core/jest.config.ts",
-				"passWithNoTests": true
+				"jestConfig": "libs/api/modules/core/jest.config.ts"
 			}
 		}
-	},
-	"tags": ["scope:backend-core"]
+	}
 }

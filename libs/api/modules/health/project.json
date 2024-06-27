@@ -2,22 +2,17 @@
 	"name": "api-modules-health",
 	"$schema": "../../../../node_modules/nx/schemas/project-schema.json",
 	"sourceRoot": "libs/api/modules/health/src",
+	"tags": ["scope:backend"],
 	"targets": {
 		"lint": {
-			"executor": "@nx/linter:eslint",
-			"outputs": ["{options.outputFile}"],
-			"options": {
-				"lintFilePatterns": ["libs/api/modules/health/**/*.ts"]
-			}
+			"executor": "@nx/eslint:lint"
 		},
 		"test": {
 			"executor": "@nx/jest:jest",
 			"outputs": ["{workspaceRoot}/coverage/libs/api/modules/health"],
 			"options": {
-				"jestConfig": "libs/api/modules/health/jest.config.ts",
-				"passWithNoTests": true
+				"jestConfig": "libs/api/modules/health/jest.config.ts"
 			}
 		}
-	},
-	"tags": ["scope:backend"]
+	}
 }

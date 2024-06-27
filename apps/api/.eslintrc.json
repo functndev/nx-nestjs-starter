@@ -4,7 +4,8 @@
 	"overrides": [
 		{
 			"parserOptions": {
-				"emitDecoratorMetadata": true
+				"emitDecoratorMetadata": true,
+				"experimentalDecorators": true
 			},
 			"files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
 			"rules": {}
