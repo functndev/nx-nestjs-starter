@@ -1,0 +1,10 @@
+{
+	"exceptions": {
+		"unknown": "An unknown Error occurred.",
+		"bad-request": "The request was malformed",
+		"internal-server-error": "There was an internal server error",
+		"not-found": "The requested resource was not found.",
+		"forbidden": "This action is forbidden.",
+		"unauthorized": "You are not authorized."
+	}
+}
