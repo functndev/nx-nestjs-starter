@@ -2,22 +2,17 @@
 	"name": "api-app",
 	"$schema": "../../../node_modules/nx/schemas/project-schema.json",
 	"sourceRoot": "libs/api/app/src",
+	"tags": ["scope:backend"],
 	"targets": {
 		"lint": {
-			"executor": "@nx/linter:eslint",
-			"outputs": ["{options.outputFile}"],
-			"options": {
-				"lintFilePatterns": ["libs/api/app/**/*.ts"]
-			}
+			"executor": "@nx/eslint:lint"
 		},
 		"test": {
 			"executor": "@nx/jest:jest",
 			"outputs": ["{workspaceRoot}/coverage/libs/api/app"],
 			"options": {
-				"jestConfig": "libs/api/app/jest.config.ts",
-				"passWithNoTests": true
+				"jestConfig": "libs/api/app/jest.config.ts"
 			}
 		}
-	},
-	"tags": ["scope:backend"]
+	}
 }

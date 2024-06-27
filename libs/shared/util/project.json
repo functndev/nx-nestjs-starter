@@ -2,22 +2,17 @@
 	"name": "shared-util",
 	"$schema": "../../../node_modules/nx/schemas/project-schema.json",
 	"sourceRoot": "libs/shared/util/src",
+	"tags": ["scope:shared"],
 	"targets": {
 		"lint": {
-			"executor": "@nx/linter:eslint",
-			"outputs": ["{options.outputFile}"],
-			"options": {
-				"lintFilePatterns": ["libs/shared/util/**/*.ts"]
-			}
+			"executor": "@nx/eslint:lint"
 		},
 		"test": {
 			"executor": "@nx/jest:jest",
 			"outputs": ["{workspaceRoot}/coverage/libs/shared/util"],
 			"options": {
-				"jestConfig": "libs/shared/util/jest.config.ts",
-				"passWithNoTests": true
+				"jestConfig": "libs/shared/util/jest.config.ts"
 			}
 		}
-	},
-	"tags": ["scope:shared"]
+	}
 }

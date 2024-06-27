@@ -26,9 +26,8 @@ export const getApiErrorResponse = (
 ): I18nExceptionResponseInterface => ({
 	statusCode: e.getStatus(),
 	error: e.message,
-	message: req.t(e.i18nKeys, { lng: 'en', ...e.metadata }),
-	i18nMessage: req.t(e.i18nKeys, e.metadata),
-	lngKeys: e.i18nKeys,
+	message: req.t(e.i18nKey || 'exceptions.unknown', { lng: 'en', ...e.metadata }),
+	i18nMessage: e.i18nKey,
 	errorLng: req.language,
 	id: req.id,
 });
@@ -43,8 +42,8 @@ export const getStandardErrorResponse = (
 		statusCode: e.getStatus(),
 		error: e.message,
 		message: req.t(key, { lng: 'en' }),
-		i18nMessage: req.t(key),
-		lngKeys: [key],
+		i18nMessage: key,
+
 		errorLng: req.language,
 		id: req.id,
 	};
@@ -57,8 +56,7 @@ export const getInternalServerErrorResponse = (
 	statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
 	error: e instanceof Error ? e.message : 'Internal server error.',
 	message: req.t(StandardApiErrorsEnum.INTERNAL_SERVER_ERROR, { lng: 'en' }),
-	i18nMessage: req.t(StandardApiErrorsEnum.INTERNAL_SERVER_ERROR),
-	lngKeys: [StandardApiErrorsEnum.INTERNAL_SERVER_ERROR],
+	i18nMessage: StandardApiErrorsEnum.INTERNAL_SERVER_ERROR,
 	errorLng: req.language,
 	id: req.id,
 });

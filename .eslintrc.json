@@ -48,7 +48,11 @@
 							},
 							{
 								"pattern": "*.+(css|sass|less|scss|pcss|styl)",
-								"patternOptions": { "dot": true, "nocomment": true, "matchBase": true },
+								"patternOptions": {
+									"dot": true,
+									"nocomment": true,
+									"matchBase": true
+								},
 								"group": "unknown"
 							}
 						],
@@ -79,7 +83,9 @@
 				"@typescript-eslint/lines-between-class-members": [
 					"error",
 					"always",
-					{ "exceptAfterSingleLine": true }
+					{
+						"exceptAfterSingleLine": true
+					}
 				],
 				"@typescript-eslint/consistent-type-imports": ["error"],
 				"@typescript-eslint/naming-convention": [
@@ -107,13 +113,18 @@
 						}
 					}
 				],
-				"no-mixed-spaces-and-tabs": "off"
+				"no-mixed-spaces-and-tabs": "off",
+				"@typescript-eslint/no-extra-semi": "error",
+				"no-extra-semi": "off"
 			}
 		},
 		{
 			"files": ["*.js", "*.jsx"],
 			"extends": ["plugin:@nx/javascript"],
-			"rules": {}
+			"rules": {
+				"@typescript-eslint/no-extra-semi": "error",
+				"no-extra-semi": "off"
+			}
 		},
 		{
 			"files": "*.json",

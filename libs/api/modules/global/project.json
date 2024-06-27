@@ -2,22 +2,17 @@
 	"name": "api-modules-global",
 	"$schema": "../../../../node_modules/nx/schemas/project-schema.json",
 	"sourceRoot": "libs/api/modules/global/src",
+	"tags": ["scope:backend"],
 	"targets": {
 		"lint": {
-			"executor": "@nx/linter:eslint",
-			"outputs": ["{options.outputFile}"],
-			"options": {
-				"lintFilePatterns": ["libs/api/modules/global/**/*.ts"]
-			}
+			"executor": "@nx/eslint:lint"
 		},
 		"test": {
 			"executor": "@nx/jest:jest",
 			"outputs": ["{workspaceRoot}/coverage/libs/api/modules/global"],
 			"options": {
-				"jestConfig": "libs/api/modules/global/jest.config.ts",
-				"passWithNoTests": true
+				"jestConfig": "libs/api/modules/global/jest.config.ts"
 			}
 		}
-	},
-	"tags": ["scope:backend"]
+	}
 }

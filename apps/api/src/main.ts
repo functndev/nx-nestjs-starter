@@ -7,11 +7,9 @@ import { VersioningType } from '@nestjs/common';
 
 import {
 	ConfigService,
-	en,
 	getValidationPipe,
 	i18nMiddleware,
 	initExpressSession,
-	initI18n,
 	PrismaService,
 	initSwaggerModule,
 } from '@nestjs-starter/api/modules/core';
@@ -21,8 +19,6 @@ import { AppModule } from './app/app.module';
 const now = performance.now();
 
 async function bootstrap() {
-	await initI18n({ en });
-
 	const app = await NestFactory.create(AppModule, { bufferLogs: true });
 
 	app.enableVersioning({
