@@ -1,13 +1,26 @@
-import { default as i18next } from 'i18next';
-import { default as middleware } from 'i18next-http-middleware';
+import { mkT } from '@nestjs-starter/shared/translations';
 
-import type { Resource, TFunction } from 'i18next';
+import type { Request, Response, NextFunction } from 'express';
 
-export const initI18n = (resources: Resource): Promise<TFunction> =>
-	i18next.use(middleware.LanguageDetector).init({
-		resources,
-		fallbackLng: 'en',
-		interpolation: { escapeValue: false },
-	});
+export const i18nMiddleware = (req: Request, res: Response, next: NextFunction) => {
+	// detect language
+	const detectedLang = detectLanguage(req);
 
-export const i18nMiddleware = middleware.handle(i18next);
+	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+	// @ts-ignore
+	req.t = mkT(detectedLang || 'en');
+	next();
+};
+
+const detectLanguage = (req: Request): string => {
+	// Check Accept-Language header
+	if (req.headers['accept-language']) {
+		const acceptedLanguages = req.headers['accept-language'].split(',');
+		if (acceptedLanguages.length > 0) {
+			return acceptedLanguages?.[0]?.split(';')[0] || 'en';
+		}
+	}
+
+	// Default language
+	return 'en';
+};

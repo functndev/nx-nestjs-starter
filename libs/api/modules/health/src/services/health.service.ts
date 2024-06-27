@@ -18,6 +18,6 @@ export class HealthService {
 	}
 
 	public testError(): never {
-		throw new InternalServerApiException();
+		throw new InternalServerApiException('exceptions.internal-server-error');
 	}
 }

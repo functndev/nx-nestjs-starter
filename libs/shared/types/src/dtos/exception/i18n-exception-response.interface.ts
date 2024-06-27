@@ -5,7 +5,6 @@ export interface I18nExceptionResponseInterface {
 	message: string;
 	error: string;
 	i18nMessage: string;
-	lngKeys: string[];
 	errorLng: string;
 	id: ReqId;
 }
