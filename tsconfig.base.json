@@ -25,6 +25,7 @@
 			"@nestjs-starter/api/modules/global": ["libs/api/modules/global/src/index.ts"],
 			"@nestjs-starter/api/modules/health": ["libs/api/modules/health/src/index.ts"],
 			"@nestjs-starter/api/types": ["libs/api/types/src/index.ts"],
+			"@nestjs-starter/prisma": ["prisma/client"],
 			"@nestjs-starter/shared/translations": ["libs/shared/translations/src/index.ts"],
 			"@nestjs-starter/shared/types": ["libs/shared/types/src/index.ts"],
 			"@nestjs-starter/shared/util": ["libs/shared/util/src/index.ts"],

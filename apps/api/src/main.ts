@@ -30,8 +30,6 @@ async function bootstrap() {
 	const logger = app.get(Logger);
 	const prisma = app.get(PrismaService);
 
-	prisma.enableShutdownHooks(app);
-
 	app.useLogger(logger);
 	app.use(helmet());
 	app.use(cookieParser());

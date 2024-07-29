@@ -30,8 +30,7 @@ WORKDIR /app
 COPY --from=builder /app/dist/apps/api /app
 COPY --from=builder /app/prisma /app/prisma
 
-RUN pnpm i --ignore-scripts
-RUN pnpm dlx prisma generate
+RUN pnpm i --ignore-scripts --prod
 
 ENV NODE_ENV production
 ENV PORT 4200
